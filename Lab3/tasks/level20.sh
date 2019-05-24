@@ -2,4 +2,4 @@
 cd ..
 rm -R john
 cd suzen
-ls -all
+ls -a
