@@ -56,7 +56,8 @@
 4. Выполнил копирование содержимого раздела /boot с диска sda (ssd1) на диск sdb (ssd2)
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/Perenosrazdelov.PNG)
 5. Выполнил установку grub на второе устройство:
-                                 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/Grub-instal.PNG)
+
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/Grub-instal.PNG)
 * Результат команды fdisk -l:
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/fdisk-l.png)
 * Результат команды lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT:
