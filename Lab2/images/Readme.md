@@ -85,24 +85,23 @@
 1. Удаление диска ssd1 в свойствах машины, проверка работоспособности виртуальной машины.
 ![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_����%20Raid%20v2.0_06_04_2019_09_25_35.png) 
 2. Проверка статуса RAID-массива cat /proc/mdstat
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_����%20Raid%20v2.0_06_04_2019_09_26_27.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/CheckRaid.PNG)
 3. Добавление в интерфейсе VM нового диска такого же размера с названием ssd3
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/Screenshot_4.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/CheckDisks.PNG)
 4. Выполнение операций:
 * Просмотр нового диска, что он приехал в систему командой fdisk -l
 * Копирование таблиц разделов со старого диска на новый: sfdisk -d /dev/XXXX | sfdisk /dev/YYY
 * Результат
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_lab%202.2_07_04_2019_21_46_35.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/add_newdisk.png)
 * Добавление в рейд массив нового диска: mdadm --manage /dev/md0 --add /dev/YYY
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_lab%202.2_07_04_2019_21_47_34.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/add_Raid.png)
 * Результат cat /proc/mdstat
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_lab%202.2_07_04_2019_21_48_13.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/add_Raid.png)
 5. Выполение синхронизации разделов, не входящих в RAID
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_lab%202.2_07_04_2019_21_49_01.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/Information%20about%20raid.png)
 6. Установка grub на новый диск
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_lab%202.2_07_04_2019_21_49_25.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/Information%20about%20raid.png)
 7. Перезагрузка ВМ и проверка, что все работает
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_������%20�����%20����������_06_04_2019_11_18_44.png)
 ## Вывод
 В этом задании научился:
 * Удалять диск ssd1
