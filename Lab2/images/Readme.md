@@ -24,8 +24,6 @@
     + Spare devices: Оставил 0 по умолчанию
     + Active devices for the RAID XX array: Выбрал разделы, которые создавал под raid
     + Finish
-* В итоге получил: 
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images/VirtualBox_Raid_26_03_2019_17_12_17.png)
 * Настройка LVM: Выбрал Configure the Logical Volume Manager
     + Keep current partition layout and configure LVM: Yes
     + Create volume group
@@ -40,8 +38,6 @@
     + Create logical volume
     + logical volume name: log
     + logical volume size: 1\5 от размера диска
-     + Выбрав Display configuration details получил следующую картину: 
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images/VirtualBox_Raid_26_03_2019_17_17_21.png)
     + Завершив настройку LVM увидел следующее:
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/LVM.png)
 * Разметка разделов: по-очереди выбрал каждый созданный в LVM том и разметил их, например, для root так:
@@ -59,10 +55,6 @@
      ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/Grub-instal.PNG)
 * Результат команды fdisk -l:
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/fdisk-l.png)
-* Результат команды lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT:
-    + sda - ssd1
-    + sdb -ssd2
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images/VirtualBox_Raid%20v2.0_07_04_2019_18_21_30.png)
 * Посмотрел информацию о текущем raid командой cat /proc/mdstat:
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/cat%20proct.png)
 Увидел, что активны два raid1 sda2[0] и sdb2[1]
@@ -82,7 +74,6 @@
 * В результате получил виртуальную машину с дисками ssd1, ssd2.
 # Задание 2 (Эмуляция отказа одного из дисков)
 1. Удаление диска ssd1 в свойствах машины, проверка работоспособности виртуальной машины.
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images2/VirtualBox_����%20Raid%20v2.0_06_04_2019_09_25_35.png) 
 2. Проверка статуса RAID-массива cat /proc/mdstat
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/2ndTask/CheckRaid.PNG)
 3. Добавление в интерфейсе VM нового диска такого же размера с названием ssd3
@@ -141,13 +132,11 @@ Grub устанавливаем, чтобы могли загрузить ОС �
 * Выполнение команды pvs для просмотра информации о текущих физических томах
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/pvsnew.png)
 * Создание нового физического тома, включив в него ранее созданный RAID массив:
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images3/VirtualBox_Hard_06_04_2019_15_53_59.png)
 * Выполнение команд lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT и pvs
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/pvsnew.png)
 
 К md63 добавился FSTYPE - LVM2_member, так же dev/md63 добавился к результату команды pvs
 * Увеличение размера Volume Group system
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images3/VirtualBox_Hard_06_04_2019_15_55_08.png)
 * Выполнение команд
 ```
 vgdisplay system -v
@@ -160,7 +149,6 @@ lvs -a -o+devices
 
 LV var,log,root находятся на /dev/md0
 * Перемещение данных со старого диска на новый
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images3/VirtualBox_Hard_06_04_2019_16_01_11.png)
 * Выполнение команд:
 ```
 vgdisplay system -v
@@ -173,13 +161,6 @@ lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_20_51_19.png)
 * Изменение VG, удалив из него диск старого raid.
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_20_53_01.png)
-```
-lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
-pvs
-vgs
-```
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images3/VirtualBox_Hard_06_04_2019_16_06_45.png)
-
 В выводе команды pvs у /dev/md0 исчезли VG и Attr.
 В выводе команды vgs #PV - уменьшилось на 1, VSize, VFree - стали меньше
 * Перемонтировка /boot на второй диск, проверка, что boot не пустой
@@ -232,8 +213,6 @@ vgs
 * Примонтирование временно нового хранилище логов
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_21_51_41.png)
 * Выполнение синхронизации разделов
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images3/VirtualBox_15%20������%20�������_06_04_2019_19_27_22.png)
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images3/VirtualBox_15%20������%20�������_06_04_2019_19_27_50.png)
 * Процессы работающие с /var/log
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_21_49_28.png)
 * Остановка этих процессов
