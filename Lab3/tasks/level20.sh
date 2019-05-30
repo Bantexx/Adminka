@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ..
+cd /home
 rm -R john
 cd suzen
-ls -a
+ls 
