@@ -1,2 +1,2 @@
-# Administration OS
+# OS Administration 
 Labs for administration
