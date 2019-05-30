@@ -1,3 +1,3 @@
     
 #!/bin/bash
-head flag
+cat flag
