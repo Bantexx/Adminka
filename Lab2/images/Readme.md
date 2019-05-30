@@ -3,7 +3,7 @@
 1. Создание новой виртуальной машины, выдав ей следующие характеристики:
 * 1 gb ram
 * 1 cpu
-* 2 hdd (назвав их ssd1, ssd2 и назначил равный размер, поставив галочки hot swap и ssd)
+* 2 hdd (назвав их HDD1, HDD2 и назначил равный размер, поставив галочки hot swap и ssd)
 * SATA контроллер настроен на 4 порта
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/beginSettings.PNG)
 2. Начало установки Linux:
