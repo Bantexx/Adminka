@@ -7,7 +7,6 @@
 * SATA контроллер настроен на 4 порта
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/1stTask/beginSettings.PNG)
 2. Начало установки Linux:
-![alt-текст](https://github.com/Kindface/Linux-labs/blob/master/lab2/images/VirtualBox_Raid_26_03_2019_16_55_33.png)
 * Настройка отдельного раздела под /boot: Выбрав первый диск, создал на нем новую таблицу разделов
     + Partition size: 512M
     + Mount point: /boot
