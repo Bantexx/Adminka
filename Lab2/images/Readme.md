@@ -208,7 +208,7 @@ lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
 * Создание логического тома с размером всего свободного пространства и присвоением ему имени var_log
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_21_45_59.png)
 * Отформатирование созданного раздела в ext4
-![alt-текст](hhttps://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_21_46_54.png)
+![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_21_46_54.png)
 16. Перенос данных логов со старого раздела на новый
 * Примонтирование временно нового хранилище логов
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_21_51_41.png)
