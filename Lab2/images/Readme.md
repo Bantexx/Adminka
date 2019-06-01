@@ -191,7 +191,7 @@ lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT
 13. Расширение размера raid
 ![alt-текст](https://github.com/Bantexx/Adminka/blob/master/Lab2/images/3rdTask/VirtualBox_MyNewLinuxd_24_05_2019_21_36_27.png)
 
-Размер md127 стал 7.5G
+Размер md127 стал 4.5G
 * Вывод команды pvs
 * Расширение размера PV
 * Вывод команды pvs
